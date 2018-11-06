@@ -1,0 +1,32 @@
+info:
+  component: Gateway Server
+
+spring:
+  jmx:
+    enabled: false
+  cloud:
+    gateway:
+      default-filters:
+      - AddResponseHeader=X-Response-Default-Foo, Default-Bar
+      routes:
+      - id: wiremock-server
+        uri: http://localhost:7006
+        predicates:
+        - Path=/v1/reward-memberships/abc
+        filters:
+        - SampleWriteResponse
+        - SampleResponseDecorator
+
+server:
+  port: 7007
+  ssl:
+    enabled: false
+
+logging:
+  level:
+    org.sample: DEBUG
+    org.springframework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+    io.netty.channel: DEBUG

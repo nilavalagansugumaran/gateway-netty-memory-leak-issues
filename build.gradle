@@ -1,0 +1,54 @@
+group 'com.tss'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext {
+        springBootVersion = '2.1.0.RC1'
+        springCloudGatewayVersion = "2.1.0.M1"
+    }
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url 'https://repo.spring.io/libs-snapshot'}
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven {
+            url 'https://repo.spring.io/libs-milestone'
+        }
+    }
+    dependencies {
+       classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.3.RELEASE"
+    }
+}
+
+apply plugin: 'java'
+sourceCompatibility=1.8
+
+dependencies {
+
+    compile('org.springframework.boot:spring-boot-starter-actuator'){
+        exclude group: 'io.micrometer',module: 'micrometer-core';
+    }
+    //compile "io.projectreactor.netty:reactor-netty:0.8.2.BUILD-SNAPSHOT"
+    //compile "io.projectreactor:reactor-core:3.2.2.BUILD-SNAPSHOT"
+    compile("org.springframework.cloud:spring-cloud-gateway-core:$springCloudGatewayVersion")
+    compile("org.springframework.cloud:spring-cloud-starter-gateway:$springCloudGatewayVersion")
+//            {
+//        exclude group: 'io.projectreactor.netty', module:'reactor-netty';
+//        exclude group: 'io.projectreactor', module:'reactor-core';
+//    }
+    compile 'org.projectlombok:lombok:1.18.4'
+}
+
+repositories {
+    mavenCentral()
+    maven { url "https://repo.spring.io/snapshot" }
+    maven { url "https://repo.spring.io/milestone" }
+    maven { url 'https://repo.spring.io/libs-snapshot'}
+    maven { url "https://plugins.gradle.org/m2/" }
+    maven {
+        url 'https://repo.spring.io/libs-milestone'
+    }
+}
+apply plugin: "io.spring.dependency-management"
