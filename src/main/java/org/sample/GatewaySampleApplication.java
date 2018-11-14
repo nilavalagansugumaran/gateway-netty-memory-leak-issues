@@ -1,5 +1,6 @@
 package org.sample;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +11,10 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 public class GatewaySampleApplication {
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(GatewaySampleApplication.class)
-                .web(WebApplicationType.REACTIVE)
-                .run(args);
+//        new SpringApplicationBuilder(GatewaySampleApplication.class)
+//                .web(WebApplicationType.REACTIVE)
+//                .run(args);
+        SpringApplication.run(GatewaySampleApplication.class, args);
     }
 
 }
