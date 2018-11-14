@@ -32,22 +32,7 @@ Content of the file -
 ```
 - Add response file to `__files` directory alongside your standalone wiremock jar
 ```
-File name - get_membership_abc_response_200.json
-
-File content - 
-{
-  "jsonapi": {
-    "version": "1.0"
-  },
-  "data": {
-    "id": "abc",
-    "type": "rewardMemberships",
-    "attributes": {
-      "ucrn": "abc",
-      "membershipStatus": false
-    }
-  }
-}
+Copy file from repo - get_membership_abc_response_200.json
 ```
 - Start wiremock server (When you change the port, ensure to update the new port in `application.yml`)
 ```
