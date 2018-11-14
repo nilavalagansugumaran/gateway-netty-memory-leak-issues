@@ -2,9 +2,12 @@ info:
   component: Gateway Server
 
 spring:
+  main:
+   web-application-type: REACTIVE
   jmx:
     enabled: false
   cloud:
+    bootstrap.enabled: false
     gateway:
       default-filters:
       - AddResponseHeader=X-Response-Default-Foo, Default-Bar
