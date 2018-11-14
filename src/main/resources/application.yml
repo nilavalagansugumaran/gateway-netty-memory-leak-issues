@@ -2,8 +2,8 @@ info:
   component: Gateway Server
 
 spring:
-  main:
-   web-application-type: REACTIVE
+  #main:
+  # web-application-type: REACTIVE
   jmx:
     enabled: false
   cloud:
