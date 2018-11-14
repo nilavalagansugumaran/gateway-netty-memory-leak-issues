@@ -43,6 +43,9 @@ java -jar wiremock-standalone-2.18.0.jar --port 7006
 "-Dio.netty.leakDetectionLevel=advanced" "-Dreactor.ipc.netty.native=false" "-Dio.netty.leakDetection.targetRecords=20"
 ```
 - Start the application (By default application will start on port 7007, if you want to change, then update `application.yml`)
+```
+java -jar "-Dio.netty.leakDetectionLevel=advanced" "-Dreactor.ipc.netty.native=false" "-Dio.netty.leakDetection.targetRecords=20" -Xmx256m build/libs/gateway-netty-memory-leak-issues-1.8.jar
+```
 - Test the service 
 ```
 curl -X GET http://localhost:7007/v1/reward-memberships/abc
