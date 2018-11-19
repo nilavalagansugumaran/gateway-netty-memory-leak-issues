@@ -51,7 +51,7 @@ curl -X GET http://localhost:7007/v1/reward-memberships/abc
 - launch jvisualvm to monitor the application
 
 **How to reproduce the issue?**
-- generating load using `jemeter` (500 requests ramped up in 60 secs continued same the load for 30 iterations)
+- Create load using `jemeter` (500 requests ramped up in 60 secs continued same the load for 30 iterations). Screenshot reference can be found under `logs`
 - Start the service by applying varuois JVM parameters and enabling/disabling filters configured in `application.yml`
   - Test 1 - 256mb JVM includes micro-meter, includes two filters (Took ~5 mins to fail)
   - Test 2 - 512mb JVM includes micro-meter, includes all filters (Took ~15 mins to fail)
