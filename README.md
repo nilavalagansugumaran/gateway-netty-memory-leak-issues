@@ -38,10 +38,6 @@ Copy file from repo - get_membership_abc_response_200.json
 ```
 java -jar wiremock-standalone-2.18.0.jar --port 7006
 ```
-- Add below runtime parameters,
-```
-"-Dio.netty.leakDetectionLevel=advanced" "-Dreactor.ipc.netty.native=false" "-Dio.netty.leakDetection.targetRecords=20"
-```
 - Build and start the application (By default application will start on port 7007, if you want to change, then update `application.yml`) from project root location
 ```
 gradle clean build
