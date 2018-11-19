@@ -19,6 +19,7 @@ spring:
         filters:
         - SampleWriteResponse
         - SampleResponseDecorator
+        #- SampleResponseDecoratorV2
 
 server:
   port: 7007
@@ -27,9 +28,9 @@ server:
 
 logging:
   level:
-    org.sample: DEBUG
-    org.springframework.cloud.gateway: TRACE
-    org.springframework.http.server.reactive: DEBUG
-    org.springframework.web.reactive: DEBUG
-    reactor.ipc.netty: DEBUG
-    io.netty.channel: DEBUG
+    org.sample: ERROR
+    org.springframework.cloud.gateway: ERROR
+    org.springframework.http.server.reactive: ERROR
+    org.springframework.web.reactive: ERROR
+    reactor.ipc.netty: ERROR
+    io.netty.channel: ERROR

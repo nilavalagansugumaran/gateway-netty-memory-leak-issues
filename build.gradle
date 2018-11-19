@@ -16,7 +16,7 @@ buildscript {
         }
     }
     dependencies {
-       classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath "io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE"
     }
 }
@@ -29,8 +29,10 @@ sourceCompatibility=1.8
 targetCompatibility=1.8
 
 dependencies {
-
-   // compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
+    compile('org.springframework.boot:spring-boot-starter-actuator'){
+        exclude group: 'io.micrometer',module: 'micrometer-core';
+    }
+    // compile("org.springframework.boot:spring-boot-starter-actuator:${springBootVersion}")
     //compile("org.springframework.boot:spring-boot-starter-webflux:${springBootVersion}")
 
     //compile("org.springframework.cloud:spring-cloud-starter-netflix-ribbon:$springCloudGatewayVersion")
