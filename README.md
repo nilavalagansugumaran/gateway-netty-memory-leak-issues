@@ -4,7 +4,7 @@ Sample spring gateway application to investigate netty memory leak and sockets l
 **What you need?** 
 
 - java 1.8 and above
-- wiremock standalone 
+- wiremock standalone - Refer to `http://wiremock.org/docs/running-standalone/`
 - jmeter - to create load
 - jvisualvm
 
