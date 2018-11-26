@@ -51,6 +51,7 @@ curl -X GET http://localhost:7007/v1/reward-memberships/abc
 - launch jvisualvm to monitor the application
 
 **How to reproduce the issue?**
+- In `application.yml`, enable either SampleWriteResponse or SampleResponseDecorator to re-produce the issue. Ensure `SampleResponseBodyHandler` filter is disabled
 - Create load using `jemeter` (500 requests ramped up in 60 secs continued same the load for 30 iterations). Screenshot reference can be found under `logs`
 - Start the service by applying varuois JVM parameters and enabling/disabling filters configured in `application.yml`
   - Test 1 - 256mb JVM includes micro-meter, includes two filters (Took ~5 mins to fail)
@@ -61,4 +62,7 @@ curl -X GET http://localhost:7007/v1/reward-memberships/abc
 - No memory leaks found. Server was running over 1 hours without any issues 
   - Test 6 - 256mb JVM excludes micro-meter & removed all filters - 
 
-
+**Fix for the issue**
+- In `application.yml`, enable SampleResponseBodyHandler filter and run the load test to see the issue is fixed. Also ensure  SampleWriteResponse and SampleResponseDecorator filters are disabled
+        - SampleResponseBodyHandler
+        
