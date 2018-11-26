@@ -4,7 +4,7 @@ import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFac
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory.NameConfig;
 
 public abstract class AbstractNameConfigGatewayFilterFactory
-    extends AbstractGatewayFilterFactory<NameConfig> {
+        extends AbstractGatewayFilterFactory<NameConfig> {
   public AbstractNameConfigGatewayFilterFactory() {
     super(NameConfig.class);
   }
