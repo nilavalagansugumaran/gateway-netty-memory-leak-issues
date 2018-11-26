@@ -17,9 +17,11 @@ spring:
         predicates:
         - Path=/v1/reward-memberships/abc
         filters:
-        - SampleWriteResponse
-        - SampleResponseDecorator
-        #- SampleResponseDecoratorV2
+        # enabled either of SampleWriteResponse or SampleResponseDecorator to re-produce the issue
+        #- SampleWriteResponse
+        #- SampleResponseDecorator
+       # enable SampleResponseBodyHandler filter to see the issue is fixed
+        - SampleResponseBodyHandler
 
 server:
   port: 7007
