@@ -20,8 +20,9 @@ spring:
         # enabled either of SampleWriteResponse or SampleResponseDecorator to re-produce the issue
         #- SampleWriteResponse
         #- SampleResponseDecorator
-       # enable SampleResponseBodyHandler filter to see the issue is fixed
-        - SampleResponseBodyHandler
+       # enable SampleResponseBodyHandler or SampleReadResponses filter to see the issue is fixed
+        #- SampleResponseBodyHandler
+        - SampleReadResponses # Clean & simple way to read response body
 
 server:
   port: 7007
